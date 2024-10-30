@@ -19,11 +19,11 @@ const router = createBrowserRouter([
       },
      
       {
-        path:'english',
+        path:'/english',
         element:<EnglishNotes/>
       },
       {
-        path:'urdu',
+        path:'/urdu',
         element:<UrduNotes/>
       },
     ]

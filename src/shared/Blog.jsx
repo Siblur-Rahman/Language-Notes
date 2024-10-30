@@ -4,12 +4,15 @@ import '../shared/Common.css'
 
 
 const Blog = ({id, 
-            topic, topic_time, topic_timeURL, topicURL, url, details,
-            mark, fileName, npmCode, 
-            heading, head_details, head_time, head_timeURL,
-            define, defineBG_highlight, defineWithIndex,
-            codes, markCode, code, index, 
-             video, syntax,  h2, example
+                topic, topic_time, topic_timeURL, topicURL, url, details,
+                mark, fileName, npmCode, 
+                heading, head_details, head_time, head_timeURL,
+                define, defineBG_highlight, defineWithIndex,
+                codes, markCode, code, index, 
+                img, imgNo, img_about,
+                video, videoNo, video_about, 
+                syntax,  h2, example
+
             }) => {
     return (
         <>
@@ -67,10 +70,14 @@ const Blog = ({id,
 
         {details && <a href={details} target='_blank'><span className='text-yellow-300'> Details</span></a>}
 
-        {video && <video src={video} controls width="90%" height="500px"></video>}
         {example && <> {example} </>}
+        {img_about && <div className=''>{img_about}</div>}
         {imgNo && <h2 className="red text-2xl topic">Image No. {imgNo}</h2>}
         {img && <img className='w-5/6 mx-auto' src={img} alt="" srcset="" />}
+
+        {video_about && <div className='text-center'>{video_about}</div>}
+        {videoNo && <h2 className="red text-2xl topic">Video No. {videoNo}</h2>}
+        {video && <div><video src={video} controls width="60%" className='m-auto'></video></div>}
         </>
     );
 };
