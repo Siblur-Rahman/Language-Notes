@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
+import useAxiosPublic from "./useAxiosPublic";
 
-                const useGetData = (url) => {
-                    const [getdata, setGetdata] = useState([]);
-                    const [loading, setLoading] = useState(true);
-                    useEffect(() => {
-                        fetch(url)
-                            .then(res => res.json())
-                            .then(data => {
-                                setGetdata(data);
-                                setLoading(false);
-                            });
-                    }, [])
-                    return [getdata, loading]
-                }
 
-                export default useGetData;
+const useGetData = (api) => {
+    const axiosPublic = useAxiosPublic();
+
+    const [allData, setAllData]= useState([]);
+    
+    useEffect(()=>{
+        axiosPublic.get(`/${api}`)
+    // axiosPublic.get('/allreligiousnotes')
+    .then(res=>setAllData(res.data))
+    })
+    return allData
+};
+
+export default useGetData;

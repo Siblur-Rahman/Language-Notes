@@ -3,7 +3,7 @@ import Header from '../shared/Header'
 import Footer from '../shared/Footer'
 import NotesLeftbar from '../pages/NotesLeftbar'
 import { useEffect } from 'react'
-import NotesRightbar from '../pages/NotesRightbar'
+// import NotesRightbar from '../pages/NotesRightbar'
 import { Active } from '../shared/CommonJS'
 
 

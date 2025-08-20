@@ -17,6 +17,10 @@ const Header = () => {
             path:'/'
           },
           {
+            title:'Add Cahapter',
+            path:'/add-chapter'
+          },
+          {
             title:'English',
             path:'/english'
           },

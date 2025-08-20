@@ -5,6 +5,7 @@ import ErrorPage from '../pages/ErrorPage'
 
 import EnglishNotes from '../pages/English/EnglishNotes';
 import UrduNotes from '../pages/Urdu/UrduNotes';
+import AddTopic from '../pages/AddChapter/AddTopic';
 
 
 const router = createBrowserRouter([
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path:'/english',
         element:<EnglishNotes/>
+      },
+      {
+        path:'/add-chapter',
+        element:<AddTopic/>
       },
       {
         path:'/urdu',

@@ -1,21 +1,29 @@
-import {useEffect } from "react";
-import {Active} from "../../shared/CommonJS"
-import School from "./School";
-import Blog from "../../shared/Blog";
+import { FaTrashAlt } from "react-icons/fa";
+import useGetData from "../../hooks/useGetData";
+import TopicForm from "../../shared/TopicForm";
+import ShowHideBlog from "../../shared/ShowHideBlog";
+import useDeleteSentence from "../../hooks/useDeleteSentence";
+// import useDeleteData from "../../hooks/useDeleteData";
 
 const EnglishNotes = () => {
-    useEffect(() =>{
-        Active();
-    })
+    const allData = useGetData('all-topics')
+    // const [handleDelete] = useDeleteData()
+    const [handleDeleteSentence] = useDeleteSentence()
 
-    return ( 
-            <div className="">
-            <School/>
-            <Blog
-
-            />
-
-        </div>    
+    return (
+        <div>
+            {allData?.map((topic, index) =>
+            <>
+                <TopicForm topic={topic?.topic}/>
+                {topic?.sentences?.map((data, index)=><div key={index} className="border-2 border-black flex justify-between items-center px-4 py-2">
+                <div>
+                <ShowHideBlog from={data?.bang} to={data?.eng}/>
+                </div>    
+                <button onClick={()=>handleDeleteSentence(`deleteSentce/${topic?.topic}`, data)} className="btn btn-primary btn-sm">
+                        <FaTrashAlt className=""/>
+                </button></div>)}
+            </> )}
+        </div>
     );
 };
 
