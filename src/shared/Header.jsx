@@ -1,16 +1,10 @@
 
-// import { useContext } from "react";
 import {Link, NavLink, useLocation } from "react-router-dom";
-// import { AuthContext } from '../providers/AuthProvider';
-import useAuth from "../hooks/useAuth";
 
 const Header = () => {
         const {pathname} = useLocation()
-        const {user, logOut} = useAuth()
 
-        const handleLogOut = () =>{
-            logOut()
-        }
+      
         const links = [
           {
             title:'Home',
