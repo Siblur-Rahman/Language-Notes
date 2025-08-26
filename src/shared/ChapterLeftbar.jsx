@@ -2,11 +2,12 @@
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-scroll';
 import { handleToggleDesplay } from './CommonJS';
-import useAuth from '../hooks/useAuth';
+import useProvider from '../hooks/useProvider';
+// import useProvider from '../hooks/useProvider';
 
 
 const ChapterLeftbar = ({chapterData, chapter}) => {
-  const { isHide } = useAuth();
+  const { isHide } = useProvider();
 
     return (
         <div>

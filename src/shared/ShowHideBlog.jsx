@@ -1,8 +1,8 @@
-import useAuth from "../hooks/useAuth";
+import useProvider from "../hooks/useProvider";
 import { handleToggleDesplay } from "./CommonJS";
 
 const ShowHideBlog = ({ from, to }) => {
-  const { isHide } = useAuth();
+  const { isHide } = useProvider();
   return (
     <div className="mt-2">
       <button onClick={handleToggleDesplay} className="btn w-full outline-amber-400 outline text-2xl">{from}</button>

@@ -1,11 +1,11 @@
 import{ useState } from 'react';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-import useAuth from './useAuth';
+import useProvider from './useProvider';
 import axios from 'axios';
 
 const useDeleteItem = () => {
-    const {user} = useAuth()
+    const {user} = useProvider()
     const [deleteItem, setDeleteItem] = useState([])
   const navigate = useNavigate()
 
