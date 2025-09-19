@@ -13,8 +13,10 @@ const EnglishNotes = () => {
     return (
         <div>
             {allData?.map((topic, index) =>
-            <>
-                <TopicForm topic={topic?.topic}/>
+            <ShowHideBlog from={topic?.topic} to={<>
+            <ShowHideBlog from={"Click Me To Add Sentence"} to={<TopicForm topic={topic?.topic}/>}/>
+            {/* <h2 className="text-xl text-center text-red-800 font-bold">{topic?.topic}</h2> */}
+                
                 {topic?.sentences?.map((data, index)=><div key={index} className="border-2 border-black flex justify-between items-center px-4 py-2">
                 <div>
                 <ShowHideBlog from={data?.bang} to={data?.eng}/>
@@ -22,7 +24,7 @@ const EnglishNotes = () => {
                 <button onClick={()=>handleDeleteSentence(`deleteSentce/${topic?.topic}`, data)} className="btn btn-primary btn-sm">
                         <FaTrashAlt className=""/>
                 </button></div>)}
-            </> )}
+            </>}/> )}
         </div>
     );
 };

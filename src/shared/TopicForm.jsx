@@ -39,9 +39,9 @@ const onSubmit = async (data) => {
     }
 
     return ( 
-            <div className="p-4 border-2 border-blue-700">
+            <div className="border-2">
                             <form onSubmit={handleSubmit(onSubmit)}>
-                                <div className="form-control w-ful my-6">
+                                <div className="form-control w-ful">
                                     <label className="label">
                                         <span className="label-text text-white">Bangla*</span>
                                     </label>
